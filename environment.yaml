@@ -1,0 +1,30 @@
+# ZS-SSL-PyTorch — minimal conda env (Python 3.10 + PyTorch with CUDA 11.8)
+# 完整旧版快照见 environment_legacy_full.yaml
+#
+# 创建环境:
+#   conda env create -f environment.yaml
+# 若已存在同名环境，先: conda env remove -n zs_ssl_env
+#
+# 需要较新的 NVIDIA 驱动（支持 CUDA 11.8）。若要用 CUDA 12.x，把下面 pytorch-cuda=11.8
+# 改为 12.1（或见 https://pytorch.org/get-started/locally/ 生成命令）。
+
+name: zs_ssl_py311
+channels:
+  - pytorch
+  - nvidia
+  - defaults
+dependencies:
+  # - python=3.11
+  - pip
+  # - pytorch
+  # - torchvision
+  # - torchaudio
+  # - pytorch-cuda=11.8
+  - numpy
+  - scipy
+  - matplotlib
+  - jupyter
+  - ipykernel
+  - pip:
+    - h5py>=3.8
+    - fastmri>=0.3.0
